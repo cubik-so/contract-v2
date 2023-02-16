@@ -2,8 +2,8 @@
 
 ## Todos
 
-- [ ] user
-- [ ] project
+- [x] user
+- [x] project
 - [ ] user<>project vaults
 - [ ] verification accounts and handling default badges (still need to thinking on the core architecture)
 - [ ] contribution
