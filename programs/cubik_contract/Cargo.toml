@@ -1,5 +1,5 @@
 [package]
-name = "contract-v2"
+name = "cubik_contract"
 version = "0.1.0"
 description = "Created with Anchor"
 edition = "2021"
@@ -16,4 +16,4 @@ cpi = ["no-entrypoint"]
 default = []
 
 [dependencies]
-anchor-lang = "0.26.0"
+anchor-lang = "0.25.0"
