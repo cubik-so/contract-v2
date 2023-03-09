@@ -12,7 +12,7 @@ pub struct CreateProjectContext<'info> {
         payer = authority,
         space = Project::LEN,
         seeds = [b"project".as_ref(),_project_id.as_ref()],
-        bump 
+        bump
     )]
     pub project_account: Account<'info,  Project>,
 
@@ -22,6 +22,8 @@ pub struct CreateProjectContext<'info> {
     #[account(address = solana_program::sysvar::rent::ID)]
     pub rent: Sysvar<'info, Rent>,
 }
+
+
 pub fn create_project_handler(ctx: Context<CreateProjectContext>, _project_id: String) -> Result<()> {
     let project_account = &mut ctx.accounts.project_account;
     project_account.project_id = _project_id;
