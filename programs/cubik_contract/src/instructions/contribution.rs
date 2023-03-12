@@ -25,13 +25,11 @@ pub struct ContributionContext<'info> {
     #[account(address = solana_program::sysvar::rent::ID)]
     pub rent: Sysvar<'info, Rent>,
 }
-pub fn create_contribution_handler(ctx: Context<ContributionContext>,_round_id:String,_project_id:String,_contribution_id:String,amount:u64,token:Pubkey) -> Result<()> {
+pub fn create_contribution_handler(ctx: Context<ContributionContext>,_round_id:String,_project_id:String,_contribution_id:String,amount:u64,usd_amount:u64,token:Pubkey) -> Result<()> {
 
     let contribution_account = &mut ctx.accounts.contribution_account;
-
-
     contribution_account.authority = ctx.accounts.authority.key().clone();
-    contribution_account.amount = amount;
+    contribution_account.amount = usd_amount;
     contribution_account.project_id = _project_id;
     contribution_account.round_id = _round_id;
     contribution_account.token = token;
