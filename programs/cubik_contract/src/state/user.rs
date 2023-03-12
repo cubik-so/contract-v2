@@ -8,5 +8,5 @@ pub struct User {
     pub bump: u8,
 }
 impl User {
-    pub const LEN: usize = 8 + 32 + 32 + 1;
+    pub const LEN: usize = 8 + 32 + 42 + 1;
 }
